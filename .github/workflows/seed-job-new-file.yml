@@ -1,11 +1,11 @@
 name: Updated Go Workflow
 on:
   workflow_call:
-    inputs:
-      SHA:
-        required: true
-        type: string
-        default: ''
+    # inputs:
+    #   SHA:
+    #     required: false
+    #     type: string
+    #     default: ''
 permissions: read-all
 jobs:
   updated-job:
@@ -13,9 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout 
-      if: ${{ inputs.SHA}}
       uses: actions/checkout@v2
       with:
-        ref: ${{ inputs.SHA }}
-    - run: echo 'Hello from PR in danimartin-dev ///////////////// '
-    - run: echo $GITHUB_SHA ${{ inputs.SHA }}
+        ref: $GITHUB_SHA
+    - run: echo 'Hello from danimartin-dev'
+
