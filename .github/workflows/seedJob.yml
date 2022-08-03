@@ -21,7 +21,7 @@ jobs:
         run: echo 'Running seed job for new/updated workflow...'
       - run: echo ${{ github.event.issue.user.site_admin }}
   call-seed-job:
-    if: github.event.review.state == 'approved'
+    #if: github.event.review.state == 'approved'
     uses:  ./.github/workflows/seed-job-new-file.yml
-    with:
-      SHA: ${{ github.event.inputs.SHA }}
+    # with:
+    #   SHA: ${{ github.event.inputs.SHA }}
