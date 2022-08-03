@@ -17,4 +17,5 @@ jobs:
       uses: actions/checkout@v2
       with:
         ref: ${{ inputs.SHA }}
-    - run: echo 'Hello from test ///////////////// ' $GITHUB_SHA ${{ inputs.SHA }}
+    - run: echo 'Hello from PR in danimartin-dev ///////////////// '
+    - run: echo $GITHUB_SHA ${{ inputs.SHA }}
