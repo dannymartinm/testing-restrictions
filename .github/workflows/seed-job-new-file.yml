@@ -14,7 +14,6 @@ jobs:
     steps:
     - name: Checkout 
       uses: actions/checkout@v2
-      with:
-        ref: $GITHUB_SHA
+      # with:
+      #   ref: ${{ inputs.SHA }}
     - run: echo 'Hello from danimartin-dev'
-
