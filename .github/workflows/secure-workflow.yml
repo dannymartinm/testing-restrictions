@@ -1,16 +1,15 @@
 name: Secure Workflow
 on:
-  pull_request_target:
-    branches: master
-  workflow_dispatch:
+  pull_request:
+    types: [review_requested]
 permissions: read-all
 jobs:
-  Safe-Job:
-    name: Build and test
+  unsafe-job:
+    name: Build and test 
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
         ref: ${{ github.event.pull_request.head.sha }}
-    - name: Run scripts from code - Master
+    - name: Run scripts from code - Fork
       run: chmod +x ./scripts/index.sh && ./scripts/index.sh
