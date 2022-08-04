@@ -1,11 +1,6 @@
 name: Updated Go Workflow
 on:
   workflow_call:
-    inputs:
-      SHA:
-        required: false
-        type: string
-        default: ''
 permissions: read-all
 jobs:
   updated-job:
