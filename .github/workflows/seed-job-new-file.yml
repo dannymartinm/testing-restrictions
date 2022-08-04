@@ -17,3 +17,4 @@ jobs:
       # with:
       #   ref: ${{ inputs.SHA }}
     - run: echo 'Hello from danimartin-dev!'
+

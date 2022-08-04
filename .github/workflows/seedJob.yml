@@ -1,9 +1,9 @@
 name: Seed Job
 on:
-  # issue_comment:
-  #   types: [created]
-  pull_request_review_comment:
+  issue_comment:
     types: [created]
+  # pull_request_review_comment:
+  #   types: [created]
   pull_request_review:
     types: [submitted]
   # workflow_dispatch:
@@ -16,7 +16,7 @@ permissions: read-all
 jobs:
   call-seed-job:
     #if: ${{ github.event.inputs.SHA }}
-    uses:  danimartin-dev/esting-restrictions/.github/workflows/seed-job-new-file.yml@dev
+    uses:  danimartin-dev/testing-restrictions/.github/workflows/seed-job-new-file.yml@dev
     with:
       SHA: '12345'
 # jobs:
@@ -28,6 +28,6 @@ jobs:
 #   #     - run: echo ${{ github.event.issue.user.site_admin }}
 #   call-seed-job:
 #     #if: github.event.review.state == 'approved'
-#     uses:  ./.github/workflows/seed-job-new-file.yml
+#     uses:  danimartin-dev/esting-restrictions/.github/workflows/seed-job-new-file.yml
 #     with:
 #       SHA: '123456789'
