@@ -17,7 +17,7 @@ jobs:
   print:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{github.event.review.body}}
+      - run: echo ${{github.event.review.body}} 'hello'
   call-seed-job:
     if: github.event.review.state == 'approved' && github.event.review.body == 'Run seed job'
     uses:  danimartin-dev/testing-restrictions/.github/workflows/seed-job-new-file.yml@dev
