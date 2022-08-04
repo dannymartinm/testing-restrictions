@@ -16,7 +16,7 @@ permissions: read-all
 jobs:
   call-seed-job:
     #if: ${{ github.event.inputs.SHA }}
-    uses:  danimartin-dev/testing-restrictions/.github/workflows/seed-job-new-file.yml@dev
+    uses: danimartin-dev/testing-restrictions/.github/workflows/seed-job-new-file.yml@dev
     with:
       SHA: '12345'
 # jobs:
