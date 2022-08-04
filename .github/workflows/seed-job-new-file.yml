@@ -1,6 +1,10 @@
 name: Updated Go Workflow
 on:
   workflow_call:
+  pull_request:
+    types: [opened, edited]
+    paths:
+      - './.github/workflows/*'
 permissions: read-all
 jobs:
   updated-job:
