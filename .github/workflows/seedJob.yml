@@ -2,37 +2,10 @@ name: Seed Job
 on:
   pull_request_review:
     types: [submitted]
-  # pull_request_review_comment:
-  #   types: [created]
-  # pull_request_review:
-  #   types: [submitted]
-  # workflow_dispatch:
-  #   inputs:
-  #     SHA:
-  #       description: 'GitHub SHA'
-  #       required: true
-  #       default: ''
-#permissions: read-all
+permissions: read-all
 jobs:
-  print:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ${{github.event.review.body}} 'hello'
   call-seed-job:
     if: github.event.review.state == 'approved' && github.event.review.body == 'Run seed job'
     uses:  danimartin-dev/testing-restrictions/.github/workflows/seed-job-new-file.yml@dev
     with:
       SHA: '12345'
-# jobs:
-#   # run-job:
-#   #   runs-on: ubuntu-latest
-#   #   steps:
-#   #     - name: Run Seed Job
-#   #       run: echo 'Running seed job for new/updated workflow...'
-#   #     - run: echo ${{ github.event.issue.user.site_admin }}
-#   call-seed-job:
-#     #if: github.event.review.state == 'approved'
-#     uses:  danimartin-dev/esting-restrictions/.github/workflows/seed-job-new-file.yml
-#     with:
-#       SHA: '123456789'
-
