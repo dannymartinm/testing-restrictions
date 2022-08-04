@@ -16,4 +16,4 @@ jobs:
       uses: actions/checkout@v2
       # with:
       #   ref: ${{ inputs.SHA }}
-    - run: echo 'Hello from danimartin-dev '
+    - run: echo 'Hello from danimartin-dev!'
