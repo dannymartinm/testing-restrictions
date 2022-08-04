@@ -13,4 +13,4 @@ jobs:
   call-seed-job:
     #if: github.event.review.state == 'approved' && github.event.review.body == 'Run seed job'
     # Update this path to test your workflow. ie. {owner}/{repo}/.github/workflows/seed-job-new-file.yml 
-    uses:  danimartin-dev/testing-restrictions/.github/workflows/seed-job-new-file.yml@dev
+    uses:  ./.github/workflows/seed-job-new-file.yml
