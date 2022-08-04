@@ -1,13 +1,14 @@
 name: Seed Job
 on:
-  pull_request_review:
-    types: [submitted]
-    paths:
-      - './.github/workflows/*'
+  # pull_request_review:
+  #   types: [submitted]
+  #   paths:
+  #     - './.github/workflows/*'
+  pull_request:
+    types: [review_requested]
 permissions: read-all
 jobs:
   call-seed-job:
     if: github.event.review.state == 'approved' && github.event.review.body == 'Run seed job'
     # Update this path to test your workflow. ie. {owner}/{repo}/.github/workflows/seed-job-new-file.yml
     uses:  danimartin-dev/testing-restrictions/.github/workflows/seed-job-new-file.yml@dev
-    
