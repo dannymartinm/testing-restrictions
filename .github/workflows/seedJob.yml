@@ -16,9 +16,13 @@ on:
   #       default: ''
 #permissions: read-all
 jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{github.event.review.body}}
   call-seed-job:
-    if: github.event.review.state == 'approved'
-    uses: danimartin-dev/testing-restrictions/.github/workflows/seed-job-new-file.yml@dev
+    if: github.event.review.state == 'approved' && github.event.review.body == 'Run seed job'
+    uses: ./.github/workflows/seed-job-new-file.yml
     with:
       SHA: '12345'
 # jobs:
