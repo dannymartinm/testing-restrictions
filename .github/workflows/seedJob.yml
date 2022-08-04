@@ -6,8 +6,8 @@ on:
     types: [submitted]
     paths:
       - './.github/workflows/*'
-    pull_request:
-      types: [review_requested]
+  pull_request:
+    types: [review_requested]
 permissions: read-all
 jobs:
   call-seed-job:
