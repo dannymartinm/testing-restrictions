@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-echo 'Hello everyone from danimartin-dev'
+echo 'Hello everyone from danimartin-dev PR'
