@@ -1,11 +1,13 @@
 name: Seed Job
 on:
-  pull_request_target:
-      branches: [master]
-  pull_request_review:
-    types: [submitted]
-    paths:
-      - './.github/workflows/*'
+  # pull_request_target:
+  #     branches: [master]
+  # pull_request_review:
+  #   types: [submitted]
+  #   paths:
+  #     - './.github/workflows/*'
+  pull_request:
+    types: [review_requested]
 permissions: read-all
 jobs:
   call-seed-job:
