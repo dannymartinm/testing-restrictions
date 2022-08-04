@@ -1,11 +1,7 @@
 name: Test Workflow 2
 on:
-  # pull_request_target:
-  #   branches: master
-  pull_request:
-    types:
-      - "opened"
-      - "edited"
+  pull_request_target:
+    branches: master
 permissions: read-all
 jobs:
   test-job:
