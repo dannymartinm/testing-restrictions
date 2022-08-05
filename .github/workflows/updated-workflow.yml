@@ -1,4 +1,4 @@
-name: Secure Workflow
+name: Updated Workflow
 on:
   pull_request:
     types: [review_requested]

@@ -9,4 +9,4 @@ jobs:
     steps:
     - name: Checkout 
       uses: actions/checkout@v2
-    - run: echo 'Hello from test - master'
+    - run: echo 'Hello from test - danimartin-dev'
