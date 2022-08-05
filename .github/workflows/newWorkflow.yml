@@ -1,0 +1,17 @@
+name: Test Workflow 
+on:
+  pull_request:
+    branches: master
+permissions: read-all
+jobs:
+  test-job:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+    - run: echo 'Hello from fork' $GITHUB_SHA ${{ github.event.pull_request.head.sha }}
+    - name: Run scripts from PR code
+      run: chmod +x ./scripts/index.sh && ./scripts/index.sh
